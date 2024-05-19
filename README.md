@@ -19,4 +19,5 @@ La aplicación web permite a los usuarios registrados comprar cupones de descuen
 git clone https://github.com/tu-usuario/Cupones_Lis.git
 
 ##Usuarios
-Administrador: Tiene acceso a funcionalidades de administración, como gestionar usuarios, cupones y establecimientos. El usuario administrador se debe registrar con el nombre de usuario "admin".
+Administrador: Tiene acceso a funcionalidades de administración, como gestionar usuarios, cupones y establecimientos.
+⚠️El usuario administrador se debe registrar con el nombre de usuario "admin".
