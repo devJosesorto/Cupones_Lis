@@ -26,7 +26,7 @@ session_start();
             margin-top: 50px;
         }
         .login-option {
-            width: 30%; /* Ajustado el ancho al 30% para mejor visualización */
+            width: 30%; /* Ajustado el ancho al 30% para mejor visualizaci&oacute;n */
             padding: 20px;
             background-color: #495057; /* Color de fondo del contenedor de login */
             border-radius: 10px;
@@ -56,7 +56,7 @@ session_start();
                 <a class="nav-link" href="views/empresas/cupones.php">Registrar cupon</a>
             <?php endif; ?>
 
-            <a class="nav-link" href="views/logout.php">Cerrar sesión</a>
+            <a class="nav-link" href="views/logout.php">Cerrar sesi&oacute;n</a>
         <?php endif; ?>
     </div>
 </nav>
@@ -64,22 +64,22 @@ session_start();
 <!-- Contenido principal -->
 <div class="container mt-4">
     <h1>Bienvenido a La Cuponera SV</h1>
-    <p>¡Encuentra las mejores ofertas y descuentos aquí!</p>
+    <p>&iexcl;Encuentra las mejores ofertas y descuentos aqu&iacute;!</p>
 
     <?php if (!isset($_SESSION['usuario'])): ?>
         <!-- Opciones de ingreso y registro -->
         <div class="login-container">
             <div class="login-option">
                 <h2><a href="views/login.php">Ingreso</a></h2>
-                <!-- Aquí iría el formulario de ingreso -->
+                <!-- Aqu&iacute; ir&iacute;a el formulario de ingreso -->
             </div>
             <div class="login-option">
                 <h2><a href="views/empresas/registrar.php">Registro Empresas</a></h2>
-                <!-- Aquí iría el formulario de registro -->
+                <!-- Aqu&iacute; ir&iacute;a el formulario de registro -->
             </div>
             <div class="login-option">
                 <h2><a href="views/usuarios/registrar.php">Registro Usuarios</a></h2>
-                <!-- Aquí iría el formulario de registro -->
+                <!-- Aqu&iacute; ir&iacute;a el formulario de registro -->
             </div>
         </div>
     <?php endif; ?>
@@ -102,25 +102,25 @@ try {
     $statement->execute();
     $ofertas = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    // Mostrar las ofertas en una cuadrícula HTML
+    // Mostrar las ofertas en una cuadr&iacute;cula HTML
     echo '<div class="row">';
     foreach ($ofertas as $oferta) {
         echo '<div class="col-md-4">';
-        echo '<div class="card mb-3" style="border-radius: 10px; background-color: #f8f9fa; width: 300px;">'; // Tamaño fijo del recuadro
+        echo '<div class="card mb-3" style="border-radius: 10px; background-color: #f8f9fa; width: 300px;">'; // Tama&ntilde;o fijo del recuadro
         echo '<div class="card-body">';
         echo '<h4 class="card-title" style="color: black;">' . $oferta['titulo'] . '</h4>'; // Letras negras
         echo '<p class="card-text" style="color: black;"><strong>Precio Regular:</strong> $' . $oferta['precio_regular'] . '</p>'; // Letras negras
         echo '<p class="card-text" style="color: black;"><strong>Precio Oferta:</strong> $' . $oferta['precio_oferta'] . '</p>'; // Letras negras
         echo '<p class="card-text" style="color: black;"><strong>Cantidad de Cupones:</strong> ' . $oferta['cantidad_cupones'] . '</p>'; // Letras negras
         
-        // Verificar si el usuario es una empresa y el idEmpresa de la oferta coincide con el idUsuario en la sesión
+        // Verificar si el usuario es una empresa y el idEmpresa de la oferta coincide con el idUsuario en la sesi&oacute;n
         if ($_SESSION['tipo_usuario'] === 'empresa' && $oferta['idEmpresa'] === $_SESSION['id_usuario']) {
-            echo '<a href="#" class="btn btn-danger">Eliminar</a>'; // Botón "Eliminar" para usuarios de tipo empresa y el idEmpresa coincide
+            echo '<a href="#" class="btn btn-danger">Eliminar</a>'; // Bot&oacute;n "Eliminar" para usuarios de tipo empresa y el idEmpresa coincide
         } elseif ($_SESSION['tipo_usuario'] !== 'empresa') {
             if ($_SESSION['tipo_usuario'] === 'usuario'){
-            echo '<a href="views/cupones/comprarcupon.php?idOferta=' . $oferta['idOferta'] . '" class="btn btn-primary">Canjear</a>'; // Botón "Canjear" para otros tipos de usuario
+            echo '<a href="views/cupones/comprarcupon.php?idOferta=' . $oferta['idOferta'] . '" class="btn btn-primary">Canjear</a>'; // Bot&oacute;n "Canjear" para otros tipos de usuario
             }else{
-                echo '<a href="views/login.php?idOferta=' . $oferta['idOferta'] . '" class="btn btn-primary">Canjear</a>'; // Botón "Canjear" para otros tipos de usuario   
+                echo '<a href="views/login.php?idOferta=' . $oferta['idOferta'] . '" class="btn btn-primary">Canjear</a>'; // Bot&oacute;n "Canjear" para otros tipos de usuario   
             }
         }
         
@@ -144,7 +144,7 @@ try {
 <!-- Pie de página -->
 <footer class="footer">
     <div class="container">
-        <span>© <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
+        <span>&copy; <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
     </div>
 </footer>
 

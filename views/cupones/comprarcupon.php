@@ -73,9 +73,9 @@ if (isset($_GET['idOferta'])) {
                 <a class="nav-link" href="views/admin.php">Administrar</a>
             <?php endif; ?>
             <?php if ($_SESSION['tipo_usuario'] === 'empresa'): ?>
-                <a class="nav-link" href="views/empresas/cupones.php">Registrar cupón</a>
+                <a class="nav-link" href="views/empresas/cupones.php">Registrar cup&oacute;n</a>
             <?php endif; ?>
-            <a class="nav-link" href="../logout.php">Cerrar sesión</a>
+            <a class="nav-link" href="../logout.php">Cerrar sesi&oacute;n</a>
         <?php endif; ?>
     </div>
 </nav>
@@ -83,7 +83,7 @@ if (isset($_GET['idOferta'])) {
 <!-- Contenido principal -->
 <div class="container mt-4">
     <h1>Bienvenido a La Cuponera SV</h1>
-    <p>¡Encuentra las mejores ofertas y descuentos aquí!</p>
+    <p>&iexcl;Encuentra las mejores ofertas y descuentos aqu&iacute;!</p>
 
     <?php if (!isset($_SESSION['usuario'])): ?>
         <!-- Opciones de ingreso y registro -->
@@ -99,12 +99,12 @@ if (isset($_GET['idOferta'])) {
             </div>
         </div>
     <?php else: ?>
-        <!-- Formulario de tarjeta de crédito -->
+        <!-- Formulario de tarjeta de cr&eacute;dito -->
         <div class="credit-card-form">
-            <h2>Pago con Tarjeta de Crédito</h2>
+            <h2>Pago con Tarjeta de Cr&eacute;dito</h2>
             <form id="paymentForm">
                 <div class="form-group">
-                    <label for="cardNumber">Número de Tarjeta</label>
+                    <label for="cardNumber">N&uacute;mero de Tarjeta</label>
                     <input type="text" class="form-control" id="cardNumber" maxlength="16" required>
                 </div>
                 <div class="form-group">
@@ -112,7 +112,7 @@ if (isset($_GET['idOferta'])) {
                     <input type="month" class="form-control" id="expiryDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="cvv">Código de Seguridad (CVV)</label>
+                    <label for="cvv">C&oacute;digo de Seguridad (CVV)</label>
                     <input type="text" class="form-control" id="cvv" maxlength="3" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Pagar</button>
@@ -127,7 +127,7 @@ if (isset($_GET['idOferta'])) {
 <!-- Pie de página -->
 <footer class="footer">
     <div class="container">
-        <span>© <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
+        <span>&copy; <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
     </div>
 </footer>
 
@@ -145,7 +145,7 @@ if (isset($_GET['idOferta'])) {
         const resultDiv = document.getElementById('paymentResult');
         
         if (expiryDate > currentDate) {
-    resultDiv.textContent = 'Pago exitoso. ¡Gracias por su compra!';
+    resultDiv.textContent = 'Pago exitoso. &iexcl;Gracias por su compra!';
     resultDiv.style.color = 'green';
 
     // Verificar el valor de idOferta

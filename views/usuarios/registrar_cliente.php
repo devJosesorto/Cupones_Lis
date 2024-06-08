@@ -13,7 +13,7 @@ $fecha_nacimiento = $_POST['fecha_nacimiento'];
 try {
     $conexion = Conexion::obtenerInstancia()->getConexion();
 
-    // Verifica si el nombre de usuario, el correo electrónico o el DUI ya existen
+    // Verifica si el nombre de usuario, el correo electr&oacute;nico o el DUI ya existen
     $query = "SELECT COUNT(*) FROM Clientes WHERE usuario = :usuario OR correo = :correo OR DUI = :DUI";
     $statement = $conexion->prepare($query);
     $statement->bindParam(':usuario', $usuario);
@@ -24,10 +24,10 @@ try {
 
     if ($count > 0) {
         // Si el usuario, el correo o el DUI ya existen, muestra un mensaje de error y redirige al registro
-        echo "<script>alert('El nombre de usuario, el correo electrónico o el DUI ya están en uso.');</script>";
+        echo "<script>alert('El nombre de usuario, el correo electr&oacute;nico o el DUI ya están en uso.');</script>";
         echo "<script>window.location = 'registrar.php';</script>";
     } else {
-        // Si el usuario, el correo y el DUI no existen, procede con la inserción
+        // Si el usuario, el correo y el DUI no existen, procede con la inserci&oacute;n
         $query = "INSERT INTO Clientes (usuario, correo, contrasena, nombre, apellidos, DUI, fecha_nacimiento) 
                   VALUES (:usuario, :correo, :contrasena, :nombre, :apellidos, :DUI, :fecha_nacimiento)";
         $statement = $conexion->prepare($query);
@@ -44,16 +44,16 @@ try {
         // Ejecuta la consulta
         $statement->execute();
 
-        // Muestra un mensaje emergente con el mensaje de éxito
+        // Muestra un mensaje emergente con el mensaje de &eacute;xito
         echo "<script>alert('Cliente registrado correctamente.');</script>";
 
-        // Redirige al usuario a la página de inicio de sesión después de que se cierre el mensaje emergente
+        // Redirige al usuario a la página de inicio de sesi&oacute;n despu&eacute;s de que se cierre el mensaje emergente
         echo "<script>window.location = '../../index.php';</script>";
     }
 } catch (Exception $e) {
     echo "<script>alert('Error al registrar el cliente.');</script>";
 
-    // Redirige al usuario a la página de registro después de que se cierre el mensaje emergente
+    // Redirige al usuario a la página de registro despu&eacute;s de que se cierre el mensaje emergente
     echo "<script>window.location = 'registrar.php';</script>";
 }
 ?>

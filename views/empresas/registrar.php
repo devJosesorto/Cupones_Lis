@@ -33,11 +33,11 @@
                             <small id="nitHelp" class="form-text text-muted">Formato: XXXX-XXXXXX-XXX-X</small>
                         </div>
                         <div class="form-group">
-                            <label for="direccion">Dirección:</label>
+                            <label for="direccion">Direcci&oacute;n:</label>
                             <input type="text" class="form-control" id="direccion" name="direccion" required>
                         </div>
                         <div class="form-group">
-                            <label for="telefono">Teléfono:</label>
+                            <label for="telefono">Tel&eacute;fono:</label>
                             <input type="text" class="form-control" id="telefono" name="telefono" required>
                         </div>
                         <div class="form-group">
@@ -49,7 +49,7 @@
                             <input type="text" class="form-control" id="usuario" name="usuario" required>
                         </div>
                         <div class="form-group">
-                            <label for="contrasena">Contraseña:</label>
+                            <label for="contrasena">Contrase&ntilde;a:</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Registrar</button>

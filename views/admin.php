@@ -10,7 +10,7 @@ if (!($_SESSION['usuario'] === 'admin')) {
 
 $conexion = Conexion::obtenerInstancia()->getConexion();
 
-// Manejar la aprobación o desaprobación de una empresa
+// Manejar la aprobaci&oacute;n o desaprobaci&oacute;n de una empresa
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accion']) && isset($_POST['idEmpresa'])) {
     $idEmpresa = $_POST['idEmpresa'];
     $accion = $_POST['accion'];
@@ -39,7 +39,7 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Empresas</title>
+    <title>Administraci&oacute;n de Empresas</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <style>
         body {
@@ -62,14 +62,14 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
 <!-- Encabezado -->
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">La Cuponera SV - Administración</a>
-        <a class="nav-link" href="../views/logout.php">Cerrar sesión</a>
+        <a class="navbar-brand" href="#">La Cuponera SV - Administraci&oacute;n</a>
+        <a class="nav-link" href="../views/logout.php">Cerrar sesi&oacute;n</a>
     </div>
 </nav>
 
 <!-- Contenido principal -->
 <div class="container">
-    <h1>Administración de Empresas</h1>
+    <h1>Administraci&oacute;n de Empresas</h1>
     <div class="row">
         <div class="col-md-6">
             <h2>Empresas No Aprobadas</h2>
@@ -78,7 +78,7 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Acción</th>
+                        <th>Acci&oacute;n</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -105,7 +105,7 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Acción</th>
+                        <th>Acci&oacute;n</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -130,7 +130,7 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
 <!-- Pie de página -->
 <footer class="footer">
     <div class="container">
-        <span>© <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
+        <span>&copy; <?php echo date("Y"); ?> La Cuponera SV. Todos los derechos reservados.</span>
     </div>
 </footer>
 

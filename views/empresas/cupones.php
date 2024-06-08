@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Nuevo Cupón</title>
+    <title>Agregar Nuevo Cup&oacute;n</title>
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <style>
         body {
@@ -23,7 +23,7 @@ session_start();
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-center mb-0">Agregar Nuevo Cupón</h2>
+                    <h2 class="text-center mb-0">Agregar Nuevo Cup&oacute;n</h2>
                 </div>
                 <div class="card-body">
                     <form action="registrar_cupon.php" method="POST">
@@ -33,7 +33,7 @@ session_start();
                         </div>
 
                         <div class="form-group">
-                            <label for="titulo">Título:</label>
+                            <label for="titulo">T&iacute;tulo:</label>
                             <input type="text" class="form-control" id="titulo" name="titulo" required>
                         </div>
                         <div class="form-group">
@@ -53,7 +53,7 @@ session_start();
                             <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" required>
                         </div>
                         <div class="form-group">
-                            <label for="fecha_limite_canje">Fecha Límite de Canje:</label>
+                            <label for="fecha_limite_canje">Fecha L&iacute;mite de Canje:</label>
                             <input type="date" class="form-control" id="fecha_limite_canje" name="fecha_limite_canje" required>
                         </div>
                         <div class="form-group">
@@ -61,7 +61,7 @@ session_start();
                             <input type="number" class="form-control" id="cantidad_cupones" name="cantidad_cupones" required>
                         </div>
                         <div class="form-group">
-                            <label for="descripcion">Descripción:</label>
+                            <label for="descripcion">Descripci&oacute;n:</label>
                             <textarea class="form-control" id="descripcion" name="descripcion" rows="4" required></textarea>
                         </div>
                         <div class="form-group">
@@ -71,7 +71,7 @@ session_start();
                                 <option value="no disponible">No Disponible</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Registrar Cupón</button>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar Cup&oacute;n</button>
                     </form>
                 </div>
             </div>

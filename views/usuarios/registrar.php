@@ -32,7 +32,7 @@
                             <input type="email" class="form-control" id="correo" name="correo" required>
                         </div>
                         <div class="form-group">
-                            <label for="contrasena">Contraseña:</label>
+                            <label for="contrasena">Contrase&ntilde;a:</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" required>
                         </div>
                         <div class="form-group">

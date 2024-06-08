@@ -14,7 +14,7 @@ class Conexion {
             $this->conexion = new PDO("mysql:host={$host};dbname={$dbname}", $usuario, $password);
             $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            throw new Exception("Error de conexión: " . $e->getMessage());
+            throw new Exception("Error de conexi&oacute;n: " . $e->getMessage());
         }
     }
 

@@ -10,7 +10,7 @@ if (isset($_GET['idOferta'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Inicio de Sesi&oacute;n</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <style>
         body {
@@ -26,7 +26,7 @@ if (isset($_GET['idOferta'])) {
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-center mb-0">Inicio de Sesión</h2>
+                    <h2 class="text-center mb-0">Inicio de Sesi&oacute;n</h2>
                 </div>
                 <div class="card-body">
                     <form action="validar_login.php" method="POST">
@@ -43,10 +43,10 @@ if (isset($_GET['idOferta'])) {
                             <input type="text" class="form-control" id="usuario" name="usuario" required>
                         </div>
                         <div class="form-group">
-                            <label for="contrasena">Contraseña:</label>
+                            <label for="contrasena">Contrase&ntilde;a:</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesi&oacute;n</button>
                     </form>
                 </div>
             </div>

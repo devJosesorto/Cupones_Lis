@@ -26,26 +26,26 @@ try {
     $result = $statement->fetch(PDO::FETCH_ASSOC);
 
     if ($result) {
-        // Inicio de sesión exitoso
+        // Inicio de sesi&oacute;n exitoso
         session_start();
         $_SESSION['usuario'] = $usuario;
         $_SESSION['tipo_usuario'] = $tipo_usuario;
 
-        $_SESSION['id_usuario'] = $result[$tipo_usuario == 'usuario' ? 'idCliente' : 'idEmpresa']; // Selecciona el ID adecuado según el tipo de usuario
+        $_SESSION['id_usuario'] = $result[$tipo_usuario == 'usuario' ? 'idCliente' : 'idEmpresa']; // Selecciona el ID adecuado seg&uacute;n el tipo de usuario
 
-        echo "<script>alert('Inicio de sesión exitoso.');</script>";
+        echo "<script>alert('Inicio de sesi&oacute;n exitoso.');</script>";
         if (empty($oferta)) {
             echo "<script>window.location = '../index.php';</script>";
         } else {
             echo "<script>window.location = '../views/cupones/comprarcupon.php?idOferta=$oferta';</script>";
         }
     } else {
-        // Error en el inicio de sesión
-        echo "<script>alert('Nombre de usuario o contraseña incorrectos.');</script>";
+        // Error en el inicio de sesi&oacute;n
+        echo "<script>alert('Nombre de usuario o contrase&ntilde;a incorrectos.');</script>";
         echo "<script>window.location = 'login.php';</script>";
     }
 } catch (Exception $e) {
-    echo "<script>alert('Error al intentar iniciar sesión.');</script>";
+    echo "<script>alert('Error al intentar iniciar sesi&oacute;n.');</script>";
     echo "<script>window.location = 'login.php';</script>";
 }
 ?>

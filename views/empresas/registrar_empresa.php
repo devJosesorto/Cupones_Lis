@@ -10,12 +10,12 @@ $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 $aprobada = false; // La empresa no está aprobada por defecto
-$comision = 0.00; // Comisión inicial
+$comision = 0.00; // Comisi&oacute;n inicial
 
 try {
     $conexion = Conexion::obtenerInstancia()->getConexion();
 
-    // Verifica si el nombre de usuario, el correo electrónico o el NIT ya existen
+    // Verifica si el nombre de usuario, el correo electr&oacute;nico o el NIT ya existen
     $query = "SELECT COUNT(*) FROM Empresas WHERE usuario = :usuario OR correo = :correo OR NIT = :NIT";
     $statement = $conexion->prepare($query);
     $statement->bindParam(':usuario', $usuario);
@@ -26,10 +26,10 @@ try {
 
     if ($count > 0) {
         // Si el usuario, el correo o el NIT ya existen, muestra un mensaje de error y redirige al registro
-        echo "<script>alert('El nombre de usuario, el correo electrónico o el NIT ya están en uso.');</script>";
+        echo "<script>alert('El nombre de usuario, el correo electr&oacute;nico o el NIT ya están en uso.');</script>";
         echo "<script>window.location = 'registrar.php';</script>";
     } else {
-        // Si el usuario, el correo y el NIT no existen, procede con la inserción
+        // Si el usuario, el correo y el NIT no existen, procede con la inserci&oacute;n
         $query = "INSERT INTO Empresas (nombre, NIT, direccion, telefono, correo, usuario, contrasena, aprobada, comision) 
                   VALUES (:nombre, :NIT, :direccion, :telefono, :correo, :usuario, :contrasena, :aprobada, :comision)";
         $statement = $conexion->prepare($query);
@@ -48,16 +48,16 @@ try {
         // Ejecuta la consulta
         $statement->execute();
 
-        // Muestra un mensaje emergente con el mensaje de éxito
+        // Muestra un mensaje emergente con el mensaje de &eacute;xito
         echo "<script>alert('Empresa registrada correctamente.');</script>";
 
-        // Redirige al usuario a la página de inicio de sesión después de que se cierre el mensaje emergente
+        // Redirige al usuario a la página de inicio de sesi&oacute;n despu&eacute;s de que se cierre el mensaje emergente
         echo "<script>window.location = '../../index.php';</script>";
     }
 } catch (Exception $e) {
     echo "<script>alert('Error al registrar la empresa.');</script>";
 
-    // Redirige al usuario a la página de registro después de que se cierre el mensaje emergente
+    // Redirige al usuario a la página de registro despu&eacute;s de que se cierre el mensaje emergente
     echo "<script>window.location = 'registrar.php';</script>";
 }
 ?>
