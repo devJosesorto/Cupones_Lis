@@ -47,7 +47,9 @@ session_start();
         <a class="navbar-brand" href="#">La Cuponera SV</a>
         <?php if (isset($_SESSION['usuario'])): ?>
             <span class="navbar-text">
-                Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?> (<?php echo htmlspecialchars($_SESSION['tipo_usuario']); ?>)
+                Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?> (<?php echo htmlspecialchars($_SESSION['tipo_usuario']); ?>) <br>
+                <a href="views/compras.php" class="navbar-text">Ver cupones comprados</a>
+
             </span>
             <?php if ($_SESSION['usuario'] === 'admin'): ?>
                 <a class="nav-link" href="views/admin.php">Administrar</a>

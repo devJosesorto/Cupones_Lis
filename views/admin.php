@@ -63,7 +63,10 @@ $empresasAprobadas = $conexion->query($queryAprobadas)->fetchAll(PDO::FETCH_ASSO
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">La Cuponera SV - Administraci&oacute;n</a>
+        <br>
+                <a href="../views/reporte.php" class="navbar-text">Reportes</a>
         <a class="nav-link" href="../views/logout.php">Cerrar sesi&oacute;n</a>
+        
     </div>
 </nav>
 

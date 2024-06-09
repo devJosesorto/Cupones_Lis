@@ -32,6 +32,7 @@ CREATE TABLE Ofertas (
     cantidad_cupones INT,
     descripcion TEXT,
     estado ENUM('disponible', 'no disponible')
+    
 );
 
 -- Tabla Clientes
@@ -59,3 +60,46 @@ CREATE TABLE CuponesComprados (
     fecha_compra DATE,
     codigo_cupon VARCHAR(20) UNIQUE
 );
+
+DELIMITER $$
+CREATE TRIGGER decrementar_cantidad_cupones AFTER INSERT ON CuponesComprados
+FOR EACH ROW
+BEGIN
+    DECLARE cupones_disponibles INT;
+    SELECT cantidad_cupones INTO cupones_disponibles FROM Ofertas WHERE idOferta = NEW.idOferta;
+    
+    IF cupones_disponibles <= 1 THEN
+        UPDATE Ofertas SET cantidad_cupones = cantidad_cupones - 1, estado = 'no disponible' WHERE idOferta = NEW.idOferta;
+    ELSE
+        UPDATE Ofertas SET cantidad_cupones = cantidad_cupones - 1 WHERE idOferta = NEW.idOferta;
+    END IF;
+END$$
+DELIMITER ;
+
+/
+
+USE cuponerasv;
+
+ALTER TABLE Ofertas ADD cantidad_vendida INT DEFAULT 0;
+
+/
+
+BEGIN
+    DECLARE cupones_disponibles INT;
+    SELECT cantidad_cupones INTO cupones_disponibles FROM Ofertas WHERE idOferta = NEW.idOferta;
+    
+    IF cupones_disponibles <= 1 THEN
+        UPDATE Ofertas SET cantidad_cupones = cantidad_cupones - 1, estado = 'no disponible' WHERE idOferta = NEW.idOferta;
+    ELSE
+        UPDATE Ofertas SET cantidad_cupones = cantidad_cupones - 1 WHERE idOferta = NEW.idOferta;
+    END IF;
+END
+
+/
+
+BEGIN
+    UPDATE Ofertas
+    SET cantidad_vendida = cantidad_vendida + 1
+    WHERE idOferta = NEW.idOferta;
+END
+
